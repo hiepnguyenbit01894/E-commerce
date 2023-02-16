@@ -1,0 +1,34 @@
+.product {
+  @include productCard;
+  margin-bottom: 48px;
+
+  &-main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    .owl-stage {
+      display: flex;
+    }
+  }
+
+  &-item {
+    height: 100%;
+  }
+  &-banner {
+    height: 100%;
+    img {
+      height: 100%;
+    }
+  }
+
+  .skin {
+    background-color: #fbf7d3;
+  }
+  .deeppink {
+    background-color: #ffbdbd;
+  }
+  .deeppurple {
+    background-color: #c0abfd;
+  }
+}
+// mobile

@@ -1,0 +1,162 @@
+.header {
+  background: #fff9f3;
+  padding-bottom: 28px;
+  .navbar {
+    padding: 0px;
+    padding: 24px 0;
+    &-brand {
+      padding-right: 60px;
+    }
+
+    &-collapse {
+      background-color: #fff;
+      border-radius: 60px;
+      margin-right: 24px;
+
+      form {
+        width: 100%;
+        max-width: 760px;
+        border-radius: 50px;
+        input {
+          border: none;
+          outline: none;
+          border-radius: 60px;
+          &::placeholder {
+            @include fontLetter(12px, 400, 16px);
+          }
+        }
+      }
+      button {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        padding: 12px;
+        color: #5f5f5f;
+      }
+    }
+    &-categories {
+      margin: 8px;
+      gap: 8px;
+      background-color: #f5f6f8;
+      border-radius: inherit;
+      @include hoverText;
+      cursor: pointer;
+      &:hover {
+        color: #fff;
+        background-color: $primary-color;
+      }
+      @include fontLetter(12px, 400, 16px);
+
+      .categories-title {
+        display: block;
+        margin: 8px 0;
+        margin-left: 24px;
+        width: 82px;
+      }
+      i {
+        padding-right: 24px;
+      }
+    }
+    &-help {
+      padding: 16px 30px;
+      color: #fff;
+      background-color: $primary-color;
+      @include fontLetter(12px, 500, 16px);
+      border-radius: 50px;
+      @include hoverText;
+    }
+    &-item {
+      @include fontLetter(14px, 400, 24px);
+      gap: 24px;
+      li {
+        gap: 8px;
+        a {
+          color: $font-main;
+        }
+      }
+    }
+  }
+  &-menu {
+    @include fontLetter(14px, 400, 24px);
+    gap: 48px;
+    .menu {
+      &-link {
+        color: $font-main;
+        position: relative;
+        transition: 0.4s;
+        &:hover {
+          color: $primary-color;
+          transition: 0.4s;
+          &::before {
+            @include widthHeight(42px, 4px);
+            transition: 0.4s;
+          }
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0px;
+          bottom: -12px;
+          background-color: $primary-color;
+          border-radius: 50px;
+          @include widthHeight(0px, 4px);
+          transition: 0.4s;
+        }
+      }
+    }
+  }
+  &-categories {
+    gap: 24px;
+    display: none !important;
+    .btn {
+      @include widthHeight(86px, 48px);
+      border-radius: 100px;
+      &::after {
+        display: none;
+      }
+    }
+    .navbar {
+      padding: 0px;
+
+      width: 100%;
+      &-collapse {
+        margin-right: 0;
+      }
+      form {
+        max-width: 100%;
+      }
+    }
+  }
+}
+// tablet
+@media (max-width: 1205px) {
+  .header {
+    .navbar-primary {
+      display: none !important;
+    }
+    &-menu {
+      display: none !important;
+    }
+    &-categories {
+      display: flex !important;
+    }
+  }
+}
+// mobile
+@media (max-width: 768px) {
+  .navbar {
+    &-help {
+      display: none;
+    }
+    &-categories {
+      display: none !important;
+    }
+    &-item {
+      li {
+        .name {
+          display: none;
+        }
+      }
+    }
+  }
+}

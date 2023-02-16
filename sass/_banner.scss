@@ -1,0 +1,205 @@
+.banner {
+  margin-bottom: 48px;
+  padding: 0 15px;
+  &-inner {
+    padding: 24px;
+  }
+  .picture {
+    gap: 24px;
+    padding-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    &-item {
+      position: relative;
+      max-width: 100%;
+      img {
+        width: 100%;
+        display: block;
+      }
+    }
+    &-name {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      @include fontLetter(16px, 500, 20px);
+      color: #fff;
+    }
+  }
+  &-list {
+    gap: 24px;
+    padding-top: 24px;
+    max-height: 451px;
+  }
+  &-item {
+    position: relative;
+    border-radius: 5px;
+    @include hoverEffect(translateY(-10px));
+    &:first-child {
+      background-color: #d3fbd9;
+    }
+  }
+  .blurpink {
+    background-color: #ffe4bd;
+  }
+  .bluepurple {
+    background-color: #d9abfd;
+  }
+  .bluryellow {
+    background-color: #fdf0ab;
+  }
+  &-heart {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    outline: none;
+    border: 0;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+  &-image {
+    padding: 32px 32px 0px 32px;
+  }
+  &-Cname {
+    @include fontLetter(12px, 500, 16px);
+    display: inline-block;
+    margin-bottom: 12px;
+    color: $font-main;
+  }
+  .color {
+    gap: 8px;
+    margin-bottom: 24px;
+    &-item {
+      @include widthHeight(16px, 16px);
+      border-radius: 50%;
+    }
+    .green {
+      background-color: #7cb93e;
+    }
+    .blue {
+      background-color: #33abc6;
+    }
+    .lightgreen {
+      background-color: #1ccd8d;
+    }
+    .deepblue {
+      background-color: #3f65ea;
+    }
+    .pink {
+      background-color: #f64a69;
+    }
+    .purple {
+      background-color: #a635ec;
+    }
+    .orange {
+      background-color: #f9a85d;
+    }
+  }
+  &-title {
+    @include fontLetter(14px, 400, 24px);
+    color: $font-main;
+    height: 56px;
+  }
+  &-price {
+    @include fontLetter(14px, 500, 18px);
+    color: $font-main;
+  }
+  .card {
+    margin-top: 48px;
+    gap: 24px;
+    border: none;
+    .owl-stage {
+      display: flex;
+    }
+
+    &-image {
+      max-height: 126px;
+      max-width: 126px;
+      height: 100%;
+      width: 100%;
+    }
+    &-inner {
+      padding: 24px;
+      @include flex(space-between, center);
+    }
+    &-item {
+      height: 100%;
+
+      background-color: $secondary-color;
+    }
+
+    &-name {
+      @include fontLetter(16px, 500, 20px);
+      color: $card-primary;
+      margin-bottom: 12px;
+      width: 80%;
+    }
+    .text1 {
+      width: 50%;
+    }
+    .text2 {
+      width: 30%;
+    }
+    &-para {
+      width: 70%;
+      @include fontLetter(12px, 400, 16px);
+      color: $card-secondary;
+    }
+  }
+}
+// tablet
+
+@media (max-width: 900px) {
+  .banner {
+    .card {
+      &-inner {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+      }
+      &-desc {
+        text-align: center;
+      }
+      &-para {
+        width: 100%;
+      }
+      &-name,
+      .text1,
+      .text2 {
+        width: 100%;
+      }
+    }
+  }
+}
+// mobile
+@media (max-width: 768px) {
+  .banner {
+    &-list {
+      max-height: 100%;
+    }
+    .picture {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+// @media (max-width: 500px) {
+//   .banner {
+//     &-list {
+//       padding-top: 0px;
+//       margin-bottom: 100px;
+//     }
+//     .container {
+//       display: flex;
+//       flex-direction: column;
+//       gap: 24px;
+//     }
+//     .card {
+//       margin-top: 0px;
+//     }
+//   }
+// } ;

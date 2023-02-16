@@ -1,0 +1,18 @@
+.note {
+  background-color: #f5f6f8;
+  text-align: center;
+  color: #040404;
+  @include fontLetter(14px, 400, 24px);
+  &-name {
+    padding: 12px 0;
+  }
+}
+@media (max-width: 768px) {
+  .note {
+    &-name {
+      width: 60%;
+      margin: auto;
+    }
+    @include fontLetter(12px, 400, 16px);
+  }
+}

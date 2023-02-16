@@ -1,0 +1,123 @@
+body {
+  font-family: "poppins", sans-serif;
+}
+.container {
+  max-width: 1350px;
+  margin: 0 auto;
+}
+@mixin hoverEffect($transY) {
+  transition: 0.4s;
+  &:hover {
+    transform: $transY;
+    transition: 0.5s;
+    border: 1px dashed $primary-color;
+  }
+}
+@mixin fontLetter($fsize, $fweight, $lheight) {
+  font-size: $fsize;
+  font-weight: $fweight;
+  line-height: $lheight;
+}
+
+@mixin widthHeight($width, $height) {
+  width: $width;
+  height: $height;
+}
+@mixin hoverText {
+  transition: 0.4s;
+  &:hover {
+    background-color: #3e3e3e;
+    transition: 0.4s;
+  }
+}
+@mixin flex($jcontent, $alitem) {
+  display: flex;
+  justify-content: $jcontent;
+  align-items: $alitem;
+}
+@mixin productCard {
+  &-inner {
+    padding: 24px;
+  }
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding-top: 24px;
+    max-height: 451px;
+  }
+  &-item {
+    position: relative;
+    border-radius: 5px;
+    @include hoverEffect(translateY(-10px));
+    &:first-child {
+      background-color: #d3fbd9;
+    }
+    &:nth-child(2) {
+      background-color: #ffe4bd;
+    }
+    &:nth-child(3) {
+      background-color: #d9abfd;
+    }
+    &:nth-child(4) {
+      background-color: #fdf0ab;
+    }
+  }
+  &-heart {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    outline: none;
+    border: 0;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+  &-image {
+    padding: 32px 32px 0px 32px;
+  }
+  &-Cname {
+    @include fontLetter(12px, 500, 16px);
+    display: inline-block;
+    margin-bottom: 12px;
+    color: $font-main;
+  }
+  .color {
+    gap: 8px;
+    margin-bottom: 24px;
+    &-item {
+      @include widthHeight(16px, 16px);
+      border-radius: 50%;
+    }
+    .green {
+      background-color: #7cb93e;
+    }
+    .blue {
+      background-color: #33abc6;
+    }
+    .lightgreen {
+      background-color: #1ccd8d;
+    }
+    .deepblue {
+      background-color: #3f65ea;
+    }
+    .pink {
+      background-color: #f64a69;
+    }
+    .purple {
+      background-color: #a635ec;
+    }
+    .orange {
+      background-color: #f9a85d;
+    }
+  }
+  &-title {
+    @include fontLetter(14px, 400, 24px);
+    color: $font-main;
+    height: 56px;
+  }
+  &-price {
+    @include fontLetter(14px, 500, 18px);
+    color: $font-main;
+  }
+}
